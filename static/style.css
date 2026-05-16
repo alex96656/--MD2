@@ -1,0 +1,25 @@
+body {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(150,0,0,0.8)), url('https://wallpapercave.com/wp/wp8219463.jpg');
+    background-size: cover;
+    color: white;
+    font-family: sans-serif;
+    display: flex; justify-content: center; align-items: center; height: 100vh;
+}
+.glass-box {
+    background: rgba(0,0,0,0.9);
+    border: 2px solid #ff0000;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 30px #ff0000;
+}
+input {
+    width: 90%; padding: 10px; background: #111; border: 1px solid red; color: white; margin-bottom: 10px;
+}
+button {
+    background: red; color: white; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold;
+}
+.code-box {
+    margin: 20px; font-size: 2em; color: #00ff00; letter-spacing: 5px; border: 1px dashed red; padding: 10px;
+}
+.red { color: #ff0000; font-weight: bold; }
