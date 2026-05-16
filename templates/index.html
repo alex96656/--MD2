@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ bot_name }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="glass-box">
+        <h1>{{ bot_name }}</h1>
+        <p>Enter WhatsApp Number (e.g. 234...)</p>
+        <input type="text" id="phone" placeholder="Phone Number">
+        <button onclick="getCode()">GENERATE CODE</button>
+        <div id="code" class="code-box">_ _ _ _ - _ _ _ _</div>
+        
+        <div class="footer">
+            <p>1. Open WhatsApp Settings</p>
+            <p>2. Link via Phone Number</p>
+            <p class="red">Contact Owner: {{ telegram }}</p>
+        </div>
+    </div>
+
+    <script>
+        async function getCode() {
+            let phone = document.getElementById('phone').value;
+            const res = await fetch('/generate-code', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({number: phone})
+            });
+            const data = await res.json();
+            document.getElementById('code').innerText = data.code;
+        }
+    </script>
+</body>
+</html>
